@@ -9,7 +9,7 @@ app.set('view engine' , 'hbs')
 app.set('views' , path.resolve(__dirname,'./public/views'))
 
 app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/api', require('./routes/api').route)
+app.use('/api', require('./routes/api').route) // this mounting makes the functionality of everything present in ./routes/api , when called with /api ; this in tandem with the /users , /products and /transactions makes the functionality( i.e get/post "request methods") of user.js , product.js and transactions.js available to front-end scripts ( add_user.js , add_products.js etc)
 
 app.get('/transactions' , async (req , res) =>{
 
