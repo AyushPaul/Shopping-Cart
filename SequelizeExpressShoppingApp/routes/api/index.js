@@ -7,6 +7,11 @@ exports = module.exports = {
     route
 }
 
+/*Functionality of Routing : Routing help us to test the Get/Post methods defined in the scripts on the broser(or postman) 
+by mounting the required scripts on the specified paths , so that whenever that localhost url ends with that specified path the specified get/post methods are called depending on the request.
+*/
+
+
 /* Benefits of Routing :
 1 ) If we do not do routing of various different functions of different entities then we ould have to write redundant code for the same
 functionality ( eg : add_user.js and verify_user.js make the same get request to fetch user data just by calling /api/user) , which we could just have routed from one script file.
