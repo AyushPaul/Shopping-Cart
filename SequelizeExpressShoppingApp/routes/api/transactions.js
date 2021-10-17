@@ -3,6 +3,7 @@ const route = require('express').Router();
 
 route.get('/', (req, res) => {
     // Get all products
+    console.log(req.query)
     Transaction.findAll()
         .then((transactions) => {
             res.status(200).send(transactions)

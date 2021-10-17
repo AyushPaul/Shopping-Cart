@@ -2,27 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="shop.js"></script>
-    <script src="index.js"></script>
-    <title>Shop</title>
+    <script async defer src="verify_user_cart.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row m-4">
+    <div class="p-4">
+        <h3 class="text-center">Verify User</h3>
+        <div class="row">
             <div class="col"></div>
-            <h2 class="col">Shopping Cart</h1>
+            <div class="col-3 m-5">
+                <form>
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" id="userName">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">PassWord</label>
+                        <input type="text" id="password">
+                    </div>
+                </form>
+                <button id="btnUserVerify" class="btn btn-secondary" style="margin-left:35%;">Verify</button>                
+            </div>
             <div class="col"></div>
         </div>
-        <button class="btn btn-success" onclick="location.href = './verify_user_cart.html'">My Cart</button>
-        <div class="row mx-auto" id="product-list">
-            
-        </div>
+        
+        
     </div>
 </body>
 </html>
