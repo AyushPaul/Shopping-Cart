@@ -25,7 +25,9 @@ route.post('/', (req, res) => {
     Transaction.create({
         Username: req.body.Username,
         Productname: req.body.Productname,
-        time: Date.parse(req.body.time)
+        Price:req.body.Price,
+        time: Date.parse(req.body.time),
+        Price:parseInt(req.body.price)
     }).then((data) => {
         res.status(201).send(data)
     }).catch((error) => {

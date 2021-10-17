@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-const db = new Sequelize('shopdb2', 'shopper', 'shoppass', {
+const db = new Sequelize('shopdb4', 'shopper', 'shoppass', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {
@@ -37,9 +37,9 @@ const Product = db.define('products', {
     },
     manufacturer: Sequelize.STRING,
     price: {
-        type: Sequelize.FLOAT,
+        type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 0.0
+        defaultValue: 0
     }
 })
 
@@ -50,6 +50,10 @@ const Transaction = db.define( 'transactions' , {
     },
     Productname:{
         type:Sequelize.STRING,
+        allowNull:false
+    },
+    Price:{
+        type:Sequelize.INTEGER,
         allowNull:false
     },
     time:Sequelize.DATE

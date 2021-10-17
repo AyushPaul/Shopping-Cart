@@ -26,6 +26,7 @@ $(function () {
                 window.location.href = './index.html'
             }
             else{
+                let price;
                 $.get('/api/products', function (data) {
                     console.log(data)
                     let flag2 = 0
@@ -34,10 +35,12 @@ $(function () {
                         if(itemName.val() == product.name)
                         {
                             flag2 = 1
+                            price = product.price
                             //window.alert('Purchase Done Successfully')
                             break;
                         }
                     }
+                    console.log(parseFloat(price))
                     if(flag2 == 0)
                     {
                         window.alert('Wrong Item Name ')
@@ -46,7 +49,8 @@ $(function () {
                         $.post('/api/transactions' ,{
                             Username:userName.val(),
                             Productname:itemName.val(),
-                            time : new Date()
+                            time : new Date(),
+                            Price:price
                         } , function(data){
                             console.log(data)
                             window.alert('Transaction Done Successfully!!')
