@@ -37,8 +37,8 @@ Do the following as root :
  create database shopdb2;
  create user shopper identified by 'shoppass';
  use shopdb2;
- grant all privileges on shopdb2 to shopper;
- grant all privileges on shopdb2.* to shopper;
+ grant all privileges on shopdb4 to shopper;
+ grant all privileges on shopdb4.* to shopper;
 ```
 #### 2) Starting the Server
 Navigate to : `\SequelizeExpressShoppingApp\server.js` and run the script.
@@ -63,4 +63,9 @@ SEQUELIZEEXPRESSSHOPPINGAPP
 
 - Adding a "My Cart" option for each different User.
 - Making the UI better.
+
+---
+## Known Issue(s)/Bugs :
+
+- Difficulty in showing the Product Price in Transaction History Page
 

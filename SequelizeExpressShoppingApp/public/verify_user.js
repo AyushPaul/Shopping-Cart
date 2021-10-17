@@ -50,7 +50,7 @@ $(function () {
                             Username:userName.val(),
                             Productname:itemName.val(),
                             time : new Date(),
-                            Price:price
+                            Price:parseInt(price)
                         } , function(data){
                             console.log(data)
                             window.alert('Transaction Done Successfully!!')
