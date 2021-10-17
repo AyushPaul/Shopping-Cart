@@ -19,7 +19,12 @@ This is a Shopping Cart App made using NodeJs , Express and Sequelize.
 -  ##### Add Products
    Go to : 
    `http://localhost:2678/add_products.html`
-   For Adding new products to the front store page . 
+   For Adding new products to the front store page .
+
+-  ##### View Transactions
+   Go to : 
+   `http://localhost:2678/transactions`
+   For viewing all the transactions made by every user. 
 
 
 ---
@@ -42,4 +47,20 @@ Congrats!! Now you can use the Shopping-Cart . \o/
 
 ---
 
+## File/Directory Structure 
+
+```
+SEQUELIZEEXPRESSSHOPPINGAPP
+├───public
+│   └───views
+└───routes
+    └───api
+```
+
+---
+
+## Future Update(s) :
+
+- Adding a "My Cart" option for each different User.
+- Making the UI better.
 
