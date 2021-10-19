@@ -15,6 +15,7 @@ app.get('/transactions' , async (req , res) =>{
 
     Transaction.findAll()
         .then((transactions) => {
+            //console.log(transactions)
             res.render('view_transactions' , {
                 transactions
             })
@@ -24,8 +25,45 @@ app.get('/transactions' , async (req , res) =>{
                 error: "Could not retrieve products"
             })
         })
+})
 
+app.get('/transactions/:name' , async (req , res) =>{
 
+    Transaction.findAll({
+        where:{
+            Username:req.params.name,
+        }
+    })
+        .then((transactions) => {
+            //console.log(transactions)
+            res.render('view_transactions' , {
+                transactions
+            })
+        })
+        .catch((err) => {
+            res.status(500).send({
+                error: "Could not retrieve products"
+            })
+        })
+})
+
+app.post('/cart' , async (req , res) => {
+    console.log(req.body)
+     Transaction.findAll({
+        where:{
+            Username:req.body.Username,
+        }
+    }).then((transactions) =>{
+        //console.log(transactions)
+        res.render('view_transactions' , {
+            transactions
+        })
+    }).catch((err) => {
+        res.status(500).send({
+            error: "Could not retrieve products"
+        })
+    })
+    
 })
 
 app.listen(2678, () => console.log('Server started at http://localhost:2678'))

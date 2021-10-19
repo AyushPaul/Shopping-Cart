@@ -1,4 +1,4 @@
-$(function () {
+
     let userName = $('#userName')
     let pass = $('#password')
     //let productPrice = $('#productPrice')
@@ -9,10 +9,10 @@ $(function () {
     $('#btnUserVerify').click(function () {
         //console.log(pass.val())
         $.get('/api/users', function (data) {
-            console.log(data)
+            //console.log(data)
             let flag = 0
             for(customer of data){
-                console.log(customer)
+                //console.log(customer)
                 if(userName.val() == customer.name && pass.val() == customer.password)
                 {
                     flag = 1
@@ -26,15 +26,12 @@ $(function () {
                 window.location.href = './index.html'
             }
             else{
-                console.log(data)
-                     $.get('/api/transactions' ,{
-                        Username:userName.val(),
-                        Password:pass.val()
-                    } , function(data){
-                        console.log(data)
-                        window.alert('Transaction Done Successfully!!')
-                        window.location.href = './index.html'
-                    } )
+                //console.log(data)
+                window.location.href = `http://localhost:2678/transactions/${userName.val()}`
+                    //  $.get('/transactions',{
+                    //     Username:userName.val(),
+                    //     Password:pass.val()
+                    // })
                 }
                 
         })
@@ -53,4 +50,3 @@ $(function () {
 
     })
 
-})
