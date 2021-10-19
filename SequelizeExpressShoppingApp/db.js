@@ -37,7 +37,7 @@ const Product = db.define('products', {
     },
     manufacturer: Sequelize.STRING,
     price: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         defaultValue: 0
     }
@@ -53,7 +53,7 @@ const Transaction = db.define( 'transactions' , {
         allowNull:false
     },
     Price:{
-        type:Sequelize.INTEGER,
+        type:Sequelize.STRING,
         allowNull:false
     },
     time:Sequelize.DATE

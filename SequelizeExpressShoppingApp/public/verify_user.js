@@ -40,7 +40,7 @@ $(function () {
                             break;
                         }
                     }
-                    console.log(parseFloat(price))
+                    //console.log(parseFloat(price))
                     if(flag2 == 0)
                     {
                         window.alert('Wrong Item Name ')
@@ -49,8 +49,8 @@ $(function () {
                         $.post('/api/transactions' ,{
                             Username:userName.val(),
                             Productname:itemName.val(),
-                            time : new Date(),
-                            Price:parseInt(price)
+                            Price:price,
+                            time : new Date()
                         } , function(data){
                             console.log(data)
                             window.alert('Transaction Done Successfully!!')
