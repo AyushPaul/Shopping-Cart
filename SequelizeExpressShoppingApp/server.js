@@ -66,4 +66,6 @@ app.post('/cart' , async (req , res) => {
     
 })
 
+const SERVER_PORT = process.env.PORT || 2678
+
 app.listen(2678, () => console.log('Server started at http://localhost:2678'))
